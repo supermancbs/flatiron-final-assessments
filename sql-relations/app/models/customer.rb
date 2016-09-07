@@ -9,10 +9,16 @@ class Customer
     hometown: "TEXT"
   }
 
-  attr_accessor(*self.public_attributes)  
+  attr_accessor(*self.public_attributes)
   attr_reader :id
 
+
   def reviews
+    sql = <<-SQL
+      SELECT reviews.* FROM reviews
+      WHERE reviews.customer_id = ?
+    SQL
+    self.class.db.execute(sql, self.id)
   end
 
   def restaurants
@@ -24,8 +30,3 @@ class Customer
     self.class.db.execute(sql, self.id)
   end
 end
-
-
-customer = Customer.all.first
-# id = 1
-customer.restaurants
