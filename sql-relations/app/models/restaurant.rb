@@ -1,4 +1,4 @@
-class Restaurant
+class 
   include Databaseable::InstanceMethods
   extend Databaseable::ClassMethods
 
