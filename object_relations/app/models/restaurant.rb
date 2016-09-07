@@ -1,5 +1,5 @@
 class Restaurant
-  
+
   @@all = []
 
   attr_reader :name
@@ -9,7 +9,15 @@ class Restaurant
     @@all << self
   end
 
-  def all
+  def reviews
+    Review.all.select {|review| review.restaurant==self}
+  end
+
+  def customers
+    reviews.map {|review| review.customer}.uniq
+  end
+
+  def self.all
     @@all
   end
 

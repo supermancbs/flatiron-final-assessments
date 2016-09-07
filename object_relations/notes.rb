@@ -3,7 +3,7 @@
 # A find_by_name method for both the customer and the restaurant
 # Build the following methods on the customer class
   # Customer#add_review
-  # Customer#add_restaurant
+
 
   # Review#customer
   # Review#restaurant
@@ -18,4 +18,4 @@
 #Customer has many restaurants through reviews
 #A restaurant has many reviews
 #A restaurant has many customers through reviews
-#review belongs to customers and reviews 
+#review belongs to customers and reviews
